@@ -14,8 +14,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-600 text-white mt-8">
-      <div className="container mx-auto px-6 py-8">
+    <footer className="bg-gray-600 text-white mt-8 ">
+      <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full md:w-1/4 px-4">
             <div className="mb-4 flex flex-col items-start">

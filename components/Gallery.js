@@ -105,7 +105,7 @@ const ImageGallery = () => {
           {[...Array(18)].map((_, index) => (
             <div key={index} className="relative overflow-hidden">
               <img
-                src={`https://source.unsplash.com/800x600/?love,${index}`}
+                src={`https://source.unsplash.com/800x600/?children,${index}`}
                 alt={`Image ${index}`}
                 className="w-full h-full object-cover"
               />
