@@ -248,22 +248,22 @@ const Header = () => {
   const slidesData = [
     {
       title: 'Joy Unleashed:, Dive into the Depths of Joyful Worship!',
-      subtitle: 'Where innovation meets reliability in oil and gas services. Welcome to a future of excellence.',
+      subtitle: 'WWhere every step is a dance of faith, and every smile is the echo of unleashed Joy.',
       imgSrc: '/images/rccghdp-banner1.jpg',
     },
     {
       title: 'Word Alive:, Dive Deep into Gods Living Truth!',
-      subtitle: 'Maximize operations with advanced filtration.',
+      subtitle: 'Illuminating hearts, transforming lives, and guiding souls on an eternal journey of faith',
       imgSrc: '/images/rccghdp-banner2.jpg',
     },
     {
       title: 'Spirit-Led Living:, Embrace the Journey!',
-      subtitle: 'Real-time data for informed drilling decisions.',
+      subtitle: `Begin a journey guided by the Holy Spirit's whispers, leading to a purposeful and peaceful life.`,
       imgSrc: '/images/rccghdp-banner3.jpg',
     },
     {
       title: 'Prayer Power:, Ignite Your Spiritual Connection!',
-      subtitle: 'Enhance efficiency and extend reservoir life.',
+      subtitle: 'In the quiet whispers of prayer lies the boundless power to move mountains.',
       imgSrc: '/images/rccghdp-banner4.jpg',
     },
     // Add more slides as needed
@@ -315,10 +315,10 @@ const Header = () => {
                 <p className="text-lg mb-6">{slide.subtitle}</p>
                 <div className="flex justify-center space-x-4">
                   <button className="bg-[#98CE2F] text-white px-4 py-2 rounded">
-                    Get a Quote
+                    Join Us Onine
                   </button>
                   <button className="bg-white text-[#98CE2F] px-4 py-2 rounded">
-                    Join Us
+                    Visit Us
                   </button>
                 </div>
               </div>

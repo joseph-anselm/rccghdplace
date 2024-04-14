@@ -10,6 +10,8 @@ const navigation = [
   { name: 'What we do', href: '/what-we-do', current: false },
   { name: 'Who we are', href: '/Who-we-are', current: false },
   { name: 'Contact us', href: '/contact-us', current: false },
+  { name: 'Gallery', href: '/gallery', current: false },
+  { name: 'Blogs and updates', href: '/blogs', current: false },
 ];
 
 function classNames(...classes) {
@@ -41,7 +43,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between h-28">
               <div className="flex-shrink-0">
                 <img
-                  className="h-24 w-auto"
+                  className="h-16 w-auto"
                   src="/images/rccghdp-logo.png"
                   alt="RCCG His Dwelling Place"
                 />

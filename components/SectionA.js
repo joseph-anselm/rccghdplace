@@ -11,8 +11,11 @@ const OverlappingBoxes = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold my-10 text-center">Our Creed</h2>
+    <div className='m-20'>
+      <h2 className="text-5xl font-bold text-center mb-8">
+            <span className="bg-gradient-to-r from-yellow-400 to-green-400 text-transparent bg-clip-text">Our </span>
+            <span className="bg-gradient-to-r from-green-400 to-yellow-400 text-transparent bg-clip-text">Creed</span>
+        </h2>
       <div className="relative -top-[50%] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div
           className="bg-[#BF9930] text-black px-6 py-8 rounded-lg shadow-lg min-h-[300px] cursor-pointer"
