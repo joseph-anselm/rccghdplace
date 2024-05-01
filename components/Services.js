@@ -9,7 +9,7 @@ const ChurchServices = () => {
             <span className="bg-gradient-to-r from-yellow-400 to-green-400 text-transparent bg-clip-text" style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }} >Church </span>
             <span className="bg-gradient-to-r from-green-400 to-yellow-400 text-transparent bg-clip-text" style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }}>Services</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Sunday Worship</h3>
             <p className="text-gray-600">Join us every Sunday for a time of worship and fellowship.</p>
@@ -20,11 +20,11 @@ const ChurchServices = () => {
             <p className="text-gray-600">Join us for our midweek service for a time of prayer and reflection.</p>
             <button className="bg-[#9ACD35] text-white px-4 py-2 rounded-lg mt-4">Worship With Us</button>
           </div>
-          <div className="p-4 border border-gray-300 rounded-lg">
+          {/* <div className="p-4 border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Youth Group</h3>
             <p className="text-gray-600">Our youth group meets every Friday for fun activities and learning.</p>
             <button className="bg-[#9ACD35] text-white px-4 py-2 rounded-lg mt-4">Worship With Us</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -76,6 +76,7 @@ import Footer from "@/components/Footer";
 import ImageGallery from "@/components/Gallery";
 import ChurchServices from "@/components/Services";
 import FeaturedBlogCard from "@/components/FeaturedBlog";
+import HDPVision from "@/components/hdpVision";
 
 const oswald = Oswald({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
@@ -94,6 +95,7 @@ export default function RootLayout({ children }) {
         <div className="scroll-effect">
           <Header />
           <Creed />
+          <HDPVision />
           <ChurchServices />
           <ImageGallery />
           <FeaturedBlogCard />
