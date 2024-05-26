@@ -73,10 +73,11 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Creed from "@/components/Creed";
 import Footer from "@/components/Footer";
-import ImageGallery from "@/components/Gallery";
+import ImageGallery from "@/components/GalleryGroup";
 import ChurchServices from "@/components/Services";
 import FeaturedBlogCard from "@/components/FeaturedBlog";
 import HDPVision from "@/components/hdpVision";
+import FeaturedImages from "@/components/Gallery";
 
 const oswald = Oswald({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
@@ -93,12 +94,7 @@ export default function RootLayout({ children }) {
       <body className={oswald.className}>
         <Navbar />
         <div className="scroll-effect">
-          <Header />
-          <Creed />
-          <HDPVision />
-          <ChurchServices />
-          <ImageGallery />
-          <FeaturedBlogCard />
+          
           {children}
           <Footer />
         </div>

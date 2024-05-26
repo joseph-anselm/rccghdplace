@@ -8,10 +8,10 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'What we do', href: '/what-we-do', current: false },
-  { name: 'Who we are', href: '/Who-we-are', current: false },
+  { name: 'Who we are', href: '/who-we-are', current: false },
   { name: 'Contact us', href: '/contact-us', current: false },
   { name: 'Gallery', href: '/gallery', current: false },
-  { name: 'Blogs and updates', href: '/blogs', current: false },
+  { name: 'Blogs and updates', href: '/blog-updates', current: false },
 ];
 
 function classNames(...classes) {

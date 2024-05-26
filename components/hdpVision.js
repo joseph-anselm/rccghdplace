@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-const Section = () => {
+const HDPVision = () => {
   return (
-    <div className="bg-cover max-w-7xl mx-auto bg-center" style={{ backgroundImage: `url('/images/rccghdp-banner4.jpg')` }}>
+    <div className="bg-cover max-w-7xl mx-auto bg-center my-10" style={{ backgroundImage: `url('/images/rccghdp-banner4.jpg')` }}>
       <div className="container mx-auto py-16 bg-black bg-opacity-50">
         <section className="max-h-96 overflow-hidden">
           <div className=" h-full flex flex-col justify-center text-white text-center">
@@ -17,4 +17,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default HDPVision;
