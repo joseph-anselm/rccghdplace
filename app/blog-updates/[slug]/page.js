@@ -187,6 +187,7 @@ import { useParams } from 'next/navigation';
 import { client } from '@/sanityClient';
 import Image from 'next/image';
 import BlockContent from '@sanity/block-content-to-react';
+import SubHeader from '@/components/SubHeaderpost'; // Ensure the correct path
 
 const SingleBlogPage = () => {
   const { slug } = useParams();
@@ -235,22 +236,16 @@ const SingleBlogPage = () => {
 
   return (
     <div>
+      {blog.mainImage && (
+        <SubHeader title={blog.title} imageUrl={blog.mainImage.asset.url} />
+      )}
       <section className="bg-gray-100 py-8">
         <div className="container max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-          {blog.mainImage && (
-            <div className="w-full h-64 relative mb-4">
-              <Image
-                src={blog.mainImage.asset.url}
-                alt={blog.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-          )}
+          <div className="prose">
+            <BlockContent blocks={blog.body} />
+          </div>
           {blog.author && (
-            <div className="mb-4 flex items-center">
+            <div className="mt-8 flex items-center">
               {blog.author.image && (
                 <div className="w-16 h-16 relative mr-4">
                   <Image
@@ -267,9 +262,6 @@ const SingleBlogPage = () => {
               </p>
             </div>
           )}
-          <div className="prose">
-            <BlockContent blocks={blog.body} />
-          </div>
         </div>
       </section>
     </div>
@@ -277,3 +269,4 @@ const SingleBlogPage = () => {
 };
 
 export default SingleBlogPage;
+

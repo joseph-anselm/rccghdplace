@@ -131,7 +131,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AiOutlineMail } from 'react-icons/ai';
-import { FaFacebook, FaTwitter, FaInstagram, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaYoutube, FaSpotify } from 'react-icons/fa';
 import { fetchLatestBlogs } from '@/sanityClient';
 
 const Footer = () => {
@@ -170,8 +170,7 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              eget ligula et nisi egestas placerat.
+            RCCG HDPlace is a lively youth church in Ijebu Ode, Ogun State, Nigeria. It focuses on dynamic worship, Bible studies, and youth programs, aiming to inspire and empower believers in their faith and community.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-400 hover:text-gray-500">
@@ -182,6 +181,12 @@ const Footer = () => {
               </a>
               <a href="#" className="text-gray-400 hover:text-gray-500">
                 <FaInstagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-gray-500">
+                <FaYoutube size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-gray-500">
+                <FaSpotify size={20} />
               </a>
             </div>
           </div>
@@ -208,9 +213,14 @@ const Footer = () => {
               (+234) 803-2516519
             </p>
             <p className="mb-2 flex items-center">
+              <FaPhoneAlt className="inline mr-2" />
+              (+234) 803-2516519
+            </p>
+            <p className="mb-2 flex items-center">
               <AiOutlineMail className="inline mr-2" />
               <span className="text-gray-400">info@rccghdp.org</span>
             </p>
+            
           </div>
           <div className="w-full md:w-1/4 px-4">
             <h2 className="mb-4 text-lg font-semibold">Subscribe - We don&apos;t spam</h2>

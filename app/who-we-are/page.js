@@ -16,6 +16,7 @@
 import React from 'react';
 import SubHeader from '@/components/SubHeader';
 import HDPVision from '@/components/hdpVision';
+import AboutUsSection from '@/components/who-we-are/About-section';
 
 const Services = () => {
   return (
@@ -24,7 +25,9 @@ const Services = () => {
         title="Who we are"
         backgroundImage="https://source.unsplash.com/1600x900/?abstract-gold" // Replace with your image URL
       />
-      <HDPVision className="my-6"/>
+      
+      <AboutUsSection />
+      <HDPVision className="my-6 flex justify-center"/>
     </div>
   );
 };
