@@ -7,7 +7,7 @@
     "build": "next build --legacy-peer-deps",
     "start": "next start",
     "lint": "next lint",
-    "install": "npm install --legacy-peer-deps"
+    "install": "npm install --force"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
