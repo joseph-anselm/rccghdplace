@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --legacy-peer-deps",
     "start": "next start",
     "lint": "next lint",
-    "install": "npm install --force"   
+    "install": "npm install --legacy-peer-deps"   
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
