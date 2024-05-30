@@ -195,7 +195,7 @@ const Footer = () => {
             <ul className="list-disc list-inside">
               {latestBlogs.map((blog) => (
                 <li key={blog._id}>
-                  <Link href={`/blog/${blog.slug.current}`} legacyBehavior>
+                  <Link href={`/blog-updates/${blog.slug.current}`} legacyBehavior>
                     <a className="text-gray-400 hover:text-gray-500 capitalize">{blog.title}</a>
                   </Link>
                 </li>
