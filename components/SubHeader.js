@@ -40,7 +40,7 @@ const SubHeader = ({ title, backgroundImage }) => {
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-white px-4">
         <nav className="text-sm mb-2">
           <Link href="/" legacyBehavior>
-            <a className="hover:underline">Home</a>
+            <a className="hover:underline">Home&gt;&gt;</a>
           </Link>
           {breadcrumbs.map((item, index) => (
             <React.Fragment key={index}>

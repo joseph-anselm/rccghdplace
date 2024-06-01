@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 
 const navigation = [
@@ -65,14 +66,16 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="flex items-center space-x-4">
+              <Link href="/give" passHref>
                 <button
                   type="button"
-                  className={`hidden sm:block px-4 py-2 rounded-md ${
-                    scrolling ? 'bg-green-500 text-white' : 'bg-[#7FB000] text-white'
-                  } hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800`}
+                  className={`block w-full text-left px-4 py-2 rounded-md ${
+                    scrolling ? 'bg-green-500 text-white' : 'bg-[#98CE2F] text-white'
+                  } hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white`}
                 >
                   Give
                 </button>
+              </Link>
                 <div className="sm:hidden">
                   <Disclosure.Button className="text-gray-400 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     {open ? (
@@ -102,14 +105,16 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <button
-                type="button"
-                className={`block w-full text-left px-4 py-2 rounded-md ${
-                  scrolling ? 'bg-green-500 text-white' : 'bg-[#98CE2F] text-white'
-                } hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white`}
-              >
-                Give
-              </button>
+                 <Link href="/give" passHref>
+                  <button
+                      type="button"
+                      className={`block w-full text-left px-4 py-2 rounded-md ${
+                        scrolling ? 'bg-green-500 text-white' : 'bg-[#98CE2F] text-white'
+                      } hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white`}
+                    >
+                      Give
+                  </button>
+                </Link>
             </div>
           </Disclosure.Panel>
         </>

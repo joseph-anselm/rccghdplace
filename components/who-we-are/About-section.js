@@ -18,17 +18,24 @@ const AboutUsSection = () => {
         <div className="md:w-1/2">
           <h3 className="text-3xl font-handwriting text-[#9CCF30] mb-4">Welcome to RRCG - His Dwelling Place</h3>
           <p className="text-lg text-gray-700 mb-4">
-          Hey there, and welcome to HDPLACE! We’re absolutely thrilled to have you with us. Whether you’re here for the worship, the community, or just the snacks, we’ve got you covered. Our mission? To spread love, faith, hope, and maybe a few good laughs along the way!  </p>
-          <p className="text-lg text-gray-700 mb-4">
-            At HDPLACE, we’re all about creating a supportive and inclusive vibe where everyone can grow in their spiritual journey—and have some fun while we’re at it. We believe church should be a place where you feel right at home, and we’re dedicated to making sure you do. From our dynamic worship sessions to our engaging Bible studies and epic youth programs, there’s something here for everyone.
-        </p>
-        <p className="text-lg text-gray-700 mb-4">
-            Don’t be shy—jump right in and get involved! Whether you’ve got a knack for singing, a talent for organizing, or just love meeting new people, there’s a place for you here. We’re a big family, and we can’t wait to see how you’ll add to the awesomeness.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-            So, kick back, relax, and let’s make some incredible memories together. And remember, at HDPLACE, you’re not just a visitor—you’re family. Let’s grow, laugh, and spread some love together!
+          Hey there, and welcome to HDPLACE! We’re absolutely thrilled to have you with us. Whether you’re here for the worship, the community, or just the snacks, we’ve got you covered. 
           </p>
-          <p className="text-xl font-handwriting text-[#9CCF30]">Pastor Sam Doh</p>
+          <p className="text-lg text-gray-700 mb-4">
+          Our mission?
+          To raise kingdom role models who will dominate all spheres of influence
+
+          </p>
+          <p className="text-lg text-gray-700 mb-4">
+          At HDPLACE, we’re all about creating a supportive and inclusive vibe where everyone can grow in their spiritual journey—and have some fun while we’re at it. We believe church should be a place where you feel right at home, and we’re dedicated to making sure you do.  </p>
+            <p className="text-lg text-gray-700 mb-4">
+            Don’t be shy—jump right in and get involved! Whether you’ve got a knack for singing, a talent for organizing, or just love meeting new people, there’s a place for you here. We’re a big family, and we can’t wait to see how you’ll add to the awesomeness.
+
+            So, sit back, relax, and let’s make some incredible memories together. And remember, at HDPLACE, you’re not just a visitor—you’re family. Let’s grow, laugh, and spread some love together!
+
+
+          </p>
+        <p className="text-xl font-handwriting text-[#9CCF30]">Pastor Sam & Sade Doh<br></br>
+          Lead Pastor, RCCG, HIS DWELLING PLACE, MEGA YOUTH CHURCH.</p>
         </div>
         <div className="hidden md:block md:w-1/2">
           <Image

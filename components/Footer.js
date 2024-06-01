@@ -173,19 +173,19 @@ const Footer = () => {
             RCCG HDPlace is a lively youth church in Ijebu Ode, Ogun State, Nigeria. It focuses on dynamic worship, Bible studies, and youth programs, aiming to inspire and empower believers in their faith and community.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <a href="https://www.facebook.com/rccghdplace" className="text-gray-400 hover:text-gray-500">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <a href="https://x.com/rccghdplace" className="text-gray-400 hover:text-gray-500">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <a href="https://www.instagram.com/rccghdplace" className="text-gray-400 hover:text-gray-500">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <a href="https://youtube.com/@rccghdplace" className="text-gray-400 hover:text-gray-500">
                 <FaYoutube size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <a href="https://open.spotify.com/show/7BsRmm2DPUdl1TbGwpmYEF?si=NzwPCk26Q8ShVGrG1uzIHg" className="text-gray-400 hover:text-gray-500">
                 <FaSpotify size={20} />
               </a>
             </div>
@@ -206,15 +206,18 @@ const Footer = () => {
             <h2 className="mb-4 text-lg font-semibold">Contact</h2>
             <p className="mb-2 flex items-center">
               <FaMapMarkerAlt className="inline mr-2" />
-              Ajebo Building, New Market, Ijebu Ode
+              2ND Floor Ajebo Building Adjacent Akintonde Arcade New Market Road, IJEBU-ODE, Ogun. 
+
             </p>
             <p className="mb-2 flex items-center">
               <FaPhoneAlt className="inline mr-2" />
-              (+234) 803-2516519
+              (+234) 813-9462728
+
             </p>
             <p className="mb-2 flex items-center">
               <FaPhoneAlt className="inline mr-2" />
-              (+234) 803-2516519
+              (+234) 706-4700115
+
             </p>
             <p className="mb-2 flex items-center">
               <AiOutlineMail className="inline mr-2" />

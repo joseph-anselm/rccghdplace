@@ -2,6 +2,7 @@
 import { createClient } from "@sanity/client"
 // Import using ESM URL imports in environments that supports it:
 // import {createClient} from 'https://esm.sh/@sanity/client'
+import imageUrlBuilder from '@sanity/image-url';
 
 export const client = createClient({
   projectId: 'actqvavr',
@@ -20,3 +21,8 @@ export const fetchLatestBlogs = async () => {
   const blogs = await client.fetch(query);
   return blogs;
 };
+const builder = imageUrlBuilder(client);
+
+export const urlFor = (source) => builder.image(source);
+
+export default client;
