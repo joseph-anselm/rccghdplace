@@ -18,7 +18,7 @@ const ContactUs = () => {
           </div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-40 w-40 lg:h-56 lg:w-56">
             <Image
-              src="/images/rccghdp-banner2.jpg"
+              src="/images/hdplace-contact.jpg"
               alt="Church 2"
               layout="fill"
               objectFit="cover"
