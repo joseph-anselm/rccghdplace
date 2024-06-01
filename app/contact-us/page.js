@@ -1,5 +1,6 @@
 
 import BlogPage from "@/components/BlogPage";
+import ContactUs from "@/components/ContactUs";
 import SubHeader from "@/components/SubHeader";
 
 export default function Home() {
@@ -7,9 +8,9 @@ export default function Home() {
     <div>
      <SubHeader
         title="Contact us"
-        backgroundImage="https://source.unsplash.com/1600x900/?contact" // Replace with your image URL
+        backgroundImage="https://source.unsplash.com/1600x900/?contact"
       />
-      
+      <ContactUs />
     </div>
   );
 }
