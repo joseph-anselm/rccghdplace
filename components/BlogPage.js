@@ -114,7 +114,7 @@ const BlogPage = () => {
   return (
     <section className="bg-gray-100 py-8">
       <div className="container max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold text-center mb-10">All Blogs</h2>
+        {/* <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold text-center mb-10">All Blogs</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {currentBlogs.map((blog) => (
             <div key={blog._id} className="bg-white rounded-lg shadow-md p-4">

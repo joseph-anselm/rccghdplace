@@ -17,6 +17,7 @@ import React from 'react';
 import SubHeader from '@/components/SubHeader';
 import HDPVision from '@/components/hdpVision';
 import AboutUsSection from '@/components/who-we-are/About-section';
+import DepartmentsTabs from '@/components/DepartmentsTab';
 
 const Services = () => {
   return (
@@ -28,6 +29,7 @@ const Services = () => {
       
       <AboutUsSection />
       <HDPVision className="my-6 flex justify-center"/>
+      <DepartmentsTabs />
     </div>
   );
 };
