@@ -46,7 +46,7 @@ export default function Navbar() {
               <div className="flex-shrink-0">
                 <Image
                   className="h-12 w-auto"
-                  src="/images/hdp-logo.png"
+                  src="/images/rccghdp-logo.png"
                   alt="RCCG His Dwelling Place"
                   width={100}
                   height={100}
