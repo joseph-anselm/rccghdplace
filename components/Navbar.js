@@ -44,7 +44,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between h-28">
               <div className="flex-shrink-0">
                 <img
-                  className="h-16 w-auto"
+                  className="h-12 w-auto"
                   src="/images/hdp-logo.png"
                   alt="RCCG His Dwelling Place"
                 />
