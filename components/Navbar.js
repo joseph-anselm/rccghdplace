@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const navigation = [
@@ -43,10 +44,12 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-28">
               <div className="flex-shrink-0">
-                <img
+                <Image
                   className="h-12 w-auto"
                   src="/images/hdp-logo.png"
                   alt="RCCG His Dwelling Place"
+                  width={100}
+                  height={100}
                 />
               </div>
               <div className="hidden sm:flex items-center space-x-4">

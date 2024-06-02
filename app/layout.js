@@ -67,34 +67,70 @@
 //   );
 // }
 
+// import { Oswald, Poppins } from "next/font/google";
+// import "./globals.css";
+// import Navbar from "@/components/Navbar";
+// import Header from "@/components/Header";
+// import Creed from "@/components/Creed";
+// import Footer from "@/components/Footer";
+// import ImageGallery from "@/components/GalleryGroup";
+// import ChurchServices from "@/components/Services";
+// import FeaturedBlogCard from "@/components/FeaturedBlog";
+// import HDPVision from "@/components/hdpVision";
+// import FeaturedImages from "@/components/Gallery";
+
+// const oswald = Oswald({ subsets: ["latin"] });
+// const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
+
+
+// export const metadata = {
+//   title: "RCCG - His Dwelling Place",
+//   description: "Modern RCCG Youth Church in Ijebu Ode",
+// }; 
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body className={oswald.className}>
+//         <Navbar />
+//         <div className="scroll-effect">
+          
+//           {children}
+//           <Footer />
+//         </div>
+//       </body>
+//     </html>
+//   );
+// }
+
 import { Oswald, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Header from "@/components/Header";
-import Creed from "@/components/Creed";
 import Footer from "@/components/Footer";
-import ImageGallery from "@/components/GalleryGroup";
-import ChurchServices from "@/components/Services";
-import FeaturedBlogCard from "@/components/FeaturedBlog";
-import HDPVision from "@/components/hdpVision";
-import FeaturedImages from "@/components/Gallery";
+import Head from "next/head";
 
 const oswald = Oswald({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
   title: "RCCG - His Dwelling Place",
   description: "Modern RCCG Youth Church in Ijebu Ode",
-}; 
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href="/images/rccghdp-logo.png" />
+      </Head>
       <body className={oswald.className}>
         <Navbar />
         <div className="scroll-effect">
-          
           {children}
           <Footer />
         </div>
@@ -102,4 +138,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
 
