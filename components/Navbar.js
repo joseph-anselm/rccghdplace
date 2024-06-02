@@ -37,7 +37,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed top-0 left-0 right-0 z-50 ${scrolling ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <Disclosure as="nav" className={`fixed top-0 left-0 right-0 z-50 ${scrolling ? 'bg-[#AC861B] shadow-md' : 'bg-transparent'}`}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export default function Navbar() {
               <div className="flex-shrink-0">
                 <img
                   className="h-16 w-auto"
-                  src="/images/rccghdp-logo.png"
+                  src="/images/hdp-logo.png"
                   alt="RCCG His Dwelling Place"
                 />
               </div>

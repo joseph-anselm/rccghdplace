@@ -232,67 +232,157 @@
 // export default Header;
 
 
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
+// import SwiperCore from 'swiper/core';
+// import { Navigation, Pagination, Autoplay, EffectFlip } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import { EffectFade, Fade } from 'swiper/modules';
+// import 'swiper/css/effect-fade';
+
+
+// SwiperCore.use([Autoplay, Navigation, Pagination]);
+
+// const Header = () => {
+//   const slidesData = [
+//     {
+//       title: 'Joy Unleashed:, Dive into the Depths of Joyful Worship!',
+//       subtitle: 'WWhere every step is a dance of faith, and every smile is the echo of unleashed Joy.',
+//       imgSrc: '/images/rccghdp-banner1.jpg',
+//     },
+//     {
+//       title: 'Word Alive:, Dive Deep into Gods Living Truth!',
+//       subtitle: 'Illuminating hearts, transforming lives, and guiding souls on an eternal journey of faith',
+//       imgSrc: '/images/rccghdp-banner2.jpg',
+//     },
+//     {
+//       title: 'Spirit-Led Living:, Embrace the Journey!',
+//       subtitle: `Begin a journey guided by the Holy Spirit's whispers, leading to a purposeful and peaceful life.`,
+//       imgSrc: '/images/rccghdp-banner3.jpg',
+//     },
+//     {
+//       title: 'Prayer Power:, Ignite Your Spiritual Connection!',
+//       subtitle: 'In the quiet whispers of prayer lies the boundless power to move mountains.',
+//       imgSrc: '/images/rccghdp-banner4.jpg',
+//     },
+//     // Add more slides as needed
+//   ];
+
+//   useEffect(() => {
+//     // Any initialization logic if needed
+//   }, []); 
+
+//   return (
+//     <Swiper
+//       slidesPerView={1}
+//       pagination={{ clickable: true }}
+//       loop={true}
+//       autoplay={{ delay: 3000, disableOnInteraction: false, reverseDirection: false, stopOnLastSlide: false, waitForTransition: true }}
+//       className="relative h-screen"
+//       initialSlide={0}
+//       speed={3000}
+//       modules={[EffectFade]} 
+//       effect="fade"
+//     >
+//       {slidesData.map((slide, index) => {
+//         // Splitting the title into words
+//         const words = slide.title.split(',');
+
+//         // Wrapping the first word in a span with green color
+//         const titleWithGreenText = (
+//           <>
+//             <span className="text-[#DAB24B]">{words[0]} </span>
+//             {words.slice(1).join(',')}
+//           </>
+//         );
+
+//         return (
+//           <SwiperSlide
+//             key={index}
+//             style={{
+//               backgroundImage: `url("${slide.imgSrc}")`,
+//               backgroundSize: 'cover',
+//               backgroundPosition: 'center',
+//             }}
+//           >
+//             <div className="absolute inset-0 bg-black opacity-40"></div>
+//             <div className="absolute inset-0 flex items-center justify-center">
+//               <div className="text-center text-white px-4">
+//               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+//                     {titleWithGreenText}
+//               </h1>
+//                 <p className="text-lg mb-6">{slide.subtitle}</p>
+//                 <div className="flex justify-center space-x-4">
+//                   <button className="bg-[#98CE2F] text-white px-4 py-2 rounded">
+//                     Join Us Onine
+//                   </button>
+//                   <button className="bg-white text-[#98CE2F] px-4 py-2 rounded">
+//                     Visit Us
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           </SwiperSlide>
+//         );
+//       })}
+//     </Swiper>
+//   );
+// };
+
+// export default Header;
+
+
+// components/Header.js
+
+import React, { useEffect, useState } from 'react';
 import SwiperCore from 'swiper/core';
-import { Navigation, Pagination, Autoplay, EffectFlip } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFlip, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { EffectFade, Fade } from 'swiper/modules';
 import 'swiper/css/effect-fade';
+import { client, urlFor } from '@/sanityClient';
 
-
-SwiperCore.use([Autoplay, Navigation, Pagination]);
+SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 const Header = () => {
-  const slidesData = [
-    {
-      title: 'Joy Unleashed:, Dive into the Depths of Joyful Worship!',
-      subtitle: 'WWhere every step is a dance of faith, and every smile is the echo of unleashed Joy.',
-      imgSrc: '/images/rccghdp-banner1.jpg',
-    },
-    {
-      title: 'Word Alive:, Dive Deep into Gods Living Truth!',
-      subtitle: 'Illuminating hearts, transforming lives, and guiding souls on an eternal journey of faith',
-      imgSrc: '/images/rccghdp-banner2.jpg',
-    },
-    {
-      title: 'Spirit-Led Living:, Embrace the Journey!',
-      subtitle: `Begin a journey guided by the Holy Spirit's whispers, leading to a purposeful and peaceful life.`,
-      imgSrc: '/images/rccghdp-banner3.jpg',
-    },
-    {
-      title: 'Prayer Power:, Ignite Your Spiritual Connection!',
-      subtitle: 'In the quiet whispers of prayer lies the boundless power to move mountains.',
-      imgSrc: '/images/rccghdp-banner4.jpg',
-    },
-    // Add more slides as needed
-  ];
+  const [slidesData, setSlidesData] = useState([]);
 
   useEffect(() => {
-    // Any initialization logic if needed
-  }, []); 
+    const fetchSlides = async () => {
+      const query = `*[_type == "headerSlide"]{
+        title,
+        subtitle,
+        "imgSrc": imgSrc.asset->url,
+        ctaOneText,
+        ctaOneLink,
+        ctaTwoText,
+        ctaTwoLink
+      }`;
+      const slides = await client.fetch(query);
+      setSlidesData(slides);
+    };
+    fetchSlides();
+  }, []);
 
   return (
     <Swiper
       slidesPerView={1}
       pagination={{ clickable: true }}
       loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: false, reverseDirection: false, stopOnLastSlide: false, waitForTransition: true }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       className="relative h-screen"
       initialSlide={0}
       speed={3000}
-      modules={[EffectFade]} 
+      modules={[EffectFade]}
       effect="fade"
     >
       {slidesData.map((slide, index) => {
-        // Splitting the title into words
         const words = slide.title.split(',');
-
-        // Wrapping the first word in a span with green color
         const titleWithGreenText = (
           <>
-            <span className="text-[#DAB24B]">{words[0]} </span>
+            <span className="text-[#DAB24B]">{words[0]}</span>
             {words.slice(1).join(',')}
           </>
         );
@@ -309,17 +399,17 @@ const Header = () => {
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white px-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-                    {titleWithGreenText}
-              </h1>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                  {titleWithGreenText}
+                </h1>
                 <p className="text-lg mb-6">{slide.subtitle}</p>
                 <div className="flex justify-center space-x-4">
-                  <button className="bg-[#98CE2F] text-white px-4 py-2 rounded">
-                    Join Us Onine
-                  </button>
-                  <button className="bg-white text-[#98CE2F] px-4 py-2 rounded">
-                    Visit Us
-                  </button>
+                  <a href={slide.ctaOneLink} className="bg-[#98CE2F] text-white px-4 py-2 rounded">
+                    {slide.ctaOneText}
+                  </a>
+                  <a href={slide.ctaTwoLink} className="bg-white text-[#98CE2F] px-4 py-2 rounded">
+                    {slide.ctaTwoText}
+                  </a>
                 </div>
               </div>
             </div>

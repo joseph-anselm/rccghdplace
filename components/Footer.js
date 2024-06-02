@@ -214,14 +214,14 @@ const Footer = () => {
               (+234) 813-9462728
 
             </p>
-            <p className="mb-2 flex items-center">
+            <p className="text-gray-400 mb-2 flex items-center">
               <FaPhoneAlt className="inline mr-2" />
               (+234) 706-4700115
 
             </p>
             <p className="mb-2 flex items-center">
               <AiOutlineMail className="inline mr-2" />
-              <span className="text-gray-400">info@rccghdp.org</span>
+              <span className="text-gray-400">info@rccghdplace.org</span>
             </p>
             
           </div>
