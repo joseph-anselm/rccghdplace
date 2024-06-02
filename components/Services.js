@@ -9,14 +9,11 @@ const ChurchServices = () => {
             className="bg-gradient-to-r from-yellow-400 to-green-400 text-transparent bg-clip-text"
             style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }}
           >
-            Church 
-          </span>
+            Church </span>
           <span
             className="bg-gradient-to-r from-green-400 to-yellow-400 text-transparent bg-clip-text"
             style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }}
-          >
-             Services
-          </span>
+          >Services</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border border-gray-300 rounded-lg">
