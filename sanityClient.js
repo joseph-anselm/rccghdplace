@@ -9,7 +9,8 @@ export const client = createClient({
   dataset: 'production',
   useCdn: true, // set to `false` to bypass the edge cache
   apiVersion: '2024-05-12', // use current date (YYYY-MM-DD) to target the latest API version
-  // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
+  token: 'sk0k4DpUxCCjZ805cAxrATabBCsb3wvySS4WdfBzFVxo4GXG0XoAxS7Lme0N4MoVX210y5UJwkFfpbFWGQJoq0k8LrUjxzGNHkc7sAD0HwMNvtgjybL5Vfo5rKexfRJf3CqJiRhI0CuLa8pzRDC9xKrir05XJymoC56A5JnpdaoXHdTA3SeB',
+  ignoreBrowserTokenWarning: true
 })
 
 export const fetchLatestBlogs = async () => {
