@@ -263,7 +263,7 @@ const ImageGallery = () => {
   const [filteredImages, setFilteredImages] = useState([]);
   const [activeTab, setActiveTab] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage] = useState(8);
+  const [imagesPerPage] = useState(12);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   useEffect(() => {
@@ -288,7 +288,7 @@ const ImageGallery = () => {
         {tabs.map((tab) => (
           <button
             key={tab.name}
-            className={`mx-2 px-4 py-2 rounded ${
+            className={`mx-2 mb-2 px-4 py-2 rounded ${
               activeTab === tab.category ? "bg-blue-600 text-white" : "bg-gray-200"
             }`}
             onClick={() => {
