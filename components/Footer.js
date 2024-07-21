@@ -397,7 +397,7 @@ const Footer = () => {
             <h2 className="mb-4 text-lg font-semibold">Contact</h2>
             <p className="mb-2 flex items-center text-gray-200">
               <FaMapMarkerAlt className="inline mr-2" />
-              2nd Floor Ajebo Building Adjacent Akintonde Arcade New Market Road, IJEBU-ODE, Ogun.
+              2nd Floor Ajebo Building Adjacent Akintonde Arcade New Market Rd, Ijebu-Ode, Ogun State.
             </p>
             <p className="mb-2 flex items-center text-gray-200">
               <FaPhoneAlt className="inline mr-2" />
