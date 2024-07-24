@@ -14,7 +14,7 @@ const SingleBlogPage = ({ blog }) => {
   return (
     <section className="bg-gray-100 py-8">
       <div className="container max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{blog.title}</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 mt-4">{blog.title}</h1>
         <div className="mb-6">
           <img src={blog.mainImage.asset.url} alt={blog.title} className="w-full h-auto rounded" />
         </div>
