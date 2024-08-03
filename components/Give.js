@@ -29,7 +29,7 @@ const Give = () => {
               <p className="font-medium">Account Name:</p>
             </div>
             <div className="md:w-2/3">
-              <p>RCCG His Dwelling Place Project</p>
+              <p>RCCG His Dwelling Place</p>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ const Give = () => {
               <p className="font-medium">Account Number:</p>
             </div>
             <div className="md:w-2/3">
-              <p>1017398926</p>
+              <p>017398919</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row md:items-center">
