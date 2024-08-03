@@ -25,7 +25,7 @@ const ChurchServices = () => {
           <div className="p-4 border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Wednesday Service</h3>
             <p className="text-gray-600">Join us for our midweek service for a time of prayer and reflection.</p>
-            <p className="text-lg font-bold text-gray-800 mt-2">Time: 6:00 PM - 8:00 PM</p>
+            <p className="text-lg font-bold text-gray-800 mt-2">Time: 5:30 PM - 7:00 PM</p>
             <button className="bg-[#9ACD35] text-white px-4 py-2 rounded-lg mt-4">Worship With Us</button>
           </div>
         </div>
