@@ -263,7 +263,7 @@ const ImageGallery = () => {
   const [filteredImages, setFilteredImages] = useState([]);
   const [activeTab, setActiveTab] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage] = useState(12);
+  const [imagesPerPage] = useState(18);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   useEffect(() => {
