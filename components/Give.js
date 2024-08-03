@@ -7,7 +7,35 @@ const Give = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Church Account Details</h2>
       <div className="bg-white p-6 rounded-lg shadow-md">
         <div className="mb-6">
-          <h3 className="text-xl font-semibold mb-2">Purpose: Donations</h3>
+          <h3 className="text-xl font-semibold mb-2 text-gray-500">Purpose: Tithe and Offering</h3>
+          <div className="flex flex-col md:flex-row md:items-center mb-4">
+            <div className="md:w-1/3">
+              <p className="font-medium">Bank Name:</p>
+            </div>
+            <div className="md:w-2/3">
+              <p>Zenith Bank</p>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center mb-4">
+            <div className="md:w-1/3">
+              <p className="font-medium">Account Number:</p>
+            </div>
+            <div className="md:w-2/3">
+              <p>1017398919</p>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center">
+            <div className="md:w-1/3">
+              <p className="font-medium">Account Name:</p>
+            </div>
+            <div className="md:w-2/3">
+              <p>RCCG His Dwelling Place</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold mb-2 text-gray-500">Purpose: Donations</h3>
           <div className="flex flex-col md:flex-row md:items-center mb-4">
             <div className="md:w-1/3">
               <p className="font-medium">Bank Name:</p>
@@ -22,34 +50,6 @@ const Give = () => {
             </div>
             <div className="md:w-2/3">
               <p>1017398926</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="md:w-1/3">
-              <p className="font-medium">Account Name:</p>
-            </div>
-            <div className="md:w-2/3">
-              <p>RCCG His Dwelling Place</p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Purpose: Donations</h3>
-          <div className="flex flex-col md:flex-row md:items-center mb-4">
-            <div className="md:w-1/3">
-              <p className="font-medium">Bank Name:</p>
-            </div>
-            <div className="md:w-2/3">
-              <p>Zenith Bank</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center mb-4">
-            <div className="md:w-1/3">
-              <p className="font-medium">Account Number:</p>
-            </div>
-            <div className="md:w-2/3">
-              <p>017398919</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row md:items-center">
