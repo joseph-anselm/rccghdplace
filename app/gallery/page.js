@@ -7,7 +7,7 @@ const Gallery = () => {
     <div>
       <SubHeader
         title="Gallery and Moments"
-        backgroundImage="https://source.unsplash.com/1600x900/?joyful-youth-christians-Africans" 
+        backgroundImage="/Images/Gallery.jpg" 
       />
    <ImageGallery />
     </div>

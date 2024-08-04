@@ -8,7 +8,7 @@ export default function Home() {
     <div>
      <SubHeader
         title="Contact us"
-        backgroundImage="https://source.unsplash.com/1600x900/?contact"
+        backgroundImage="/images/contact.jpg"
       />
       <ContactUs />
     </div>

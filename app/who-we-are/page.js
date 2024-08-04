@@ -24,7 +24,7 @@ const Services = () => {
     <div>
       <SubHeader
         title="Who we are"
-        backgroundImage="https://source.unsplash.com/1600x900/?abstract-gold" // Replace with your image URL
+        backgroundImage="/images/whoweare.jpg" // Replace with your image URL
       />
       
       <AboutUsSection />

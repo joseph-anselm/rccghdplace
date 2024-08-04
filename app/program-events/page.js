@@ -10,7 +10,7 @@ const Programs = () => {
     <div>
       <SubHeader
         title="Program and Events"
-        backgroundImage="https://source.unsplash.com/1600x900/?christian-events" // Replace with your image URL
+        backgroundImage="/images/programs.jpg" // Replace with your image URL
       />
       <ChurchServices />
       
