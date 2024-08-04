@@ -7,7 +7,7 @@ const Gallery = () => {
     <div>
       <SubHeader
         title="Gallery and Moments"
-        backgroundImage="/Images/Gallery.jpg" 
+        backgroundImage="/images/Gallery.jpg" 
       />
    <ImageGallery />
     </div>
