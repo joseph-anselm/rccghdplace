@@ -8,7 +8,7 @@ const AboutUsSection = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         <div className="md:hidden">
           <Image
-            src="/images/pastor.jpg" // Replace with the actual path to the pastor's image
+            src="/images/psd.png" // Replace with the actual path to the pastor's image
             alt="Pastor"
             width={500}
             height={500}
