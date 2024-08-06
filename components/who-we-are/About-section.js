@@ -16,7 +16,8 @@ const AboutUsSection = () => {
           />
         </div>
         <div className="md:w-1/2">
-          <h3 className="text-3xl font-handwriting text-[#9CCF30] mb-4">Welcome to RRCG - His Dwelling Place</h3>
+        <h3 className="text-3xl font-handwriting text-[#595916] mb-4">Welcome to RRCG - His Dwelling Place</h3>
+
           <p className="text-lg text-gray-700 mb-4">
           Hey there, and welcome to HDPLACE! We’re absolutely thrilled to have you with us. Whether you’re here for the worship, the community, or just the snacks, we’ve got you covered. 
           </p>
@@ -34,7 +35,7 @@ const AboutUsSection = () => {
 
 
           </p>
-        <p className="text-xl font-handwriting text-[#9CCF30]">Pastor Sam & Sade Doh<br></br>
+        <p className="text-xl font-handwriting text-[#36360e]">Pastor Sam & Sade Doh<br></br>
           Lead Pastor, RCCG, HIS DWELLING PLACE, MEGA YOUTH CHURCH.</p>
         </div>
         <div className="hidden md:block md:w-1/2">
