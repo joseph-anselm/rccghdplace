@@ -7,7 +7,7 @@ export default function page() {
     <div>
         <SubHeader
         title="Givers Never Lack"
-        backgroundImage="https://source.unsplash.com/1600x900/?donations"
+        backgroundImage="/images/give.jpg"
         />
         <Give />
     </div>
