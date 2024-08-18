@@ -237,7 +237,7 @@ const SingleBlogPage = () => {
   return (
     <div>
       {blog.mainImage && (
-        <SubHeader title={blog.title} imageUrl={blog.mainImage.asset.url} />
+        <SubHeader title={blog.title} imageUrl={blog.mainImage.asset.url} className="p-10" />
       )}
       <section className="bg-gray-100 py-8">
         <div className="container max-w-7xl mx-auto px-4">
