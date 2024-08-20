@@ -14,7 +14,7 @@ const SubHeader = ({ title, imageUrl }) => {
         className="absolute inset-0"
       />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white">
-        <h1 className="text-2xl md:text-4xl sm:text-2xl font-bold">{title}</h1>
+        <h1 className="text-2xl md:text-4xl sm:text-2xl font-bold m-10">{title}</h1>
         <Link href="/blog-updates" legacyBehavior>
             <a className="hover:underline">Blogs and Updates &gt;&gt;&gt;</a>
           </Link>

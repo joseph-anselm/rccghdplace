@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import ChurchServices from '@/components/Services';
 import HDPVision from '@/components/hdpVision';
 import React from 'react';
+import ThreeColumnSection from '@/components/ThreeColumn';
 
 
 
@@ -20,7 +21,7 @@ const Home = () => {
      <ChurchServices />
      <FeaturedGallery />
      <FeaturedBlogCard />
-    
+     <ThreeColumnSection />    
     </div>
   );
 };
