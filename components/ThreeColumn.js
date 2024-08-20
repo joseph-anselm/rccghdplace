@@ -12,7 +12,7 @@ const ThreeColumnSection = () => {
             <FaPray className="text-4xl text-[#9CCF30] mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Get Counsel</h3>
             <p className="text-gray-600 mb-4">
-              Need guidance or prayer? Our pastors and counselors are here to help you navigate life's challenges.
+              Need guidance or prayer? Our pastors and counselors are here to help you navigate life&apos;s challenges.
             </p>
             <button className="bg-[#9CCF30] text-white py-2 px-6 rounded-full hover:bg-[#86b829]">
               Learn More
