@@ -1,4 +1,5 @@
 // components/ThreeColumnSection.js
+import Link from 'next/link';
 import React from 'react';
 import { FaPray, FaComment, FaHandsHelping } from 'react-icons/fa';
 
@@ -26,9 +27,11 @@ const ThreeColumnSection = () => {
             <p className="text-gray-600 mb-4">
               Share your story or provide feedback to help us grow together as a community of faith.
             </p>
+            <Link href='/testimony-feedback'>
             <button className="bg-[#9CCF30] text-white py-2 px-6 rounded-full hover:bg-[#86b829]">
               Share Your Story
             </button>
+            </Link>
           </div>
 
           {/* Opportunities */}
