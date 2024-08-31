@@ -488,7 +488,8 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Email validation
+
+//  Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address.');
@@ -519,8 +520,9 @@ const Footer = () => {
     }
   };
 
+
   return (
-    <footer className="bg-gray-600 text-white mt-8">
+    <footer className="bg-gray-600 text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full md:w-1/4 px-4">

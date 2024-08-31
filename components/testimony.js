@@ -106,7 +106,7 @@ const TestimoniesPage = () => {
 
         {/* Testimonies List */}
         {testimonies.length > 0 ? (
-          <div className="space-y-4">
+          <div className="space-y-4 bg-white">
             {testimonies.map((testimony) => (
               <Disclosure key={testimony._id}>
                 {({ open }) => (
