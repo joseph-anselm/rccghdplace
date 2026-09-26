@@ -461,7 +461,7 @@ export default function Navbar({ transparentOnTop = true }) {
                     Get Involved
                   </p>
                   <h2 className="mt-1 text-xl font-bold text-[#061956]">
-                    We're here for you — how can we help?
+                    We&apos;re here for you — how can we help?
                   </h2>
                 </div>
                 <Link
