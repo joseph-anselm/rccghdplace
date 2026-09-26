@@ -205,7 +205,7 @@ export default function ChurchServices() {
               )}
               style={{ "--d": "200ms" }}
             >
-              Come as you are. There's a seat saved for you.
+              Come as you are. There&apos;s a seat saved for you.
             </p>
 
             {/* Next / live indicator */}
