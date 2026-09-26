@@ -186,7 +186,7 @@ export default function ThreeColumnSection() {
               )}
               style={{ "--d": "100ms" }}
             >
-              We're here <span className="gi-gradient-text">for you.</span>
+              We&apos;re here <span className="gi-gradient-text">for you.</span>
             </h2>
           </div>
           <p
@@ -197,7 +197,7 @@ export default function ThreeColumnSection() {
             style={{ "--d": "200ms" }}
           >
             Whether you need prayer, have a story to share or are looking for your
-            next step, there's a place for you here.
+            next step, there&apos;s a place for you here.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function ThreeColumnSection() {
         >
           <p className="text-sm text-slate-600 sm:text-base">
             <span className="font-semibold text-[#061956]">Not sure where to start?</span>{" "}
-            Reach out and we'll point you in the right direction.
+            Reach out and we&apos;ll point you in the right direction.
           </p>
           <Link
             href="/contact-us"
