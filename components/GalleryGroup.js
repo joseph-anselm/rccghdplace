@@ -577,7 +577,7 @@ export default function ImageGallery() {
         {state === "error" && (
           <div className="mx-auto mt-16 max-w-md text-center">
             <PhotoIcon className="mx-auto h-12 w-12 text-slate-300" strokeWidth={1.5} aria-hidden="true" />
-            <p className="mt-4 text-lg font-semibold text-[#061956]">We couldn't load the gallery.</p>
+            <p className="mt-4 text-lg font-semibold text-[#061956]">We couldn&apos;t load the gallery.</p>
             <p className="mt-1 text-slate-500">Please check your connection and try again.</p>
             <button
               type="button"

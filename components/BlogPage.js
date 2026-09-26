@@ -410,7 +410,7 @@ export default function BlogPage() {
         {/* ---------- Error ---------- */}
         {state === "error" && (
           <div className="mx-auto mt-16 max-w-md text-center">
-            <p className="text-lg font-semibold text-[#061956]">We couldn't load the posts.</p>
+            <p className="text-lg font-semibold text-[#061956]">We couldn&apos;t load the posts.</p>
             <p className="mt-1 text-slate-500">Please check your connection and try again.</p>
             <button type="button" onClick={load} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#061956] px-6 py-3 text-sm font-bold text-white hover:bg-[#0a2472]">
               <ArrowPathIcon className="h-4 w-4" strokeWidth={2.2} aria-hidden="true" />
