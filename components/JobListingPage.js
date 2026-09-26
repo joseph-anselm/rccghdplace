@@ -525,7 +525,7 @@ export default function JobsPage() {
           {/* Error */}
           {state === "error" && (
             <div className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-white px-6 py-12 text-center">
-              <p className="font-semibold text-[#061956]">We couldn't load opportunities right now.</p>
+              <p className="font-semibold text-[#061956]">We couldn&apos;t load opportunities right now.</p>
               <button type="button" onClick={load} className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#061956] px-6 py-3 text-sm font-bold text-white hover:bg-[#0a2472]">
                 <ArrowPathIcon className="h-4 w-4" strokeWidth={2.2} aria-hidden="true" />
                 Try again

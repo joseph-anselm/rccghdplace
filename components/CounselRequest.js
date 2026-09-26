@@ -437,13 +437,13 @@ export default function CounselingRequestPage() {
             <div>
               <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#7FB000]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#98CE2F]" />
-                You're not alone
+                You&apos;re not alone
               </p>
               <h2 id="counsel-title" className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-[#061956] sm:text-5xl">
-                Let's talk and <span className="bg-gradient-to-r from-[#7FB000] via-[#98CE2F] to-[#DAB24B] bg-clip-text text-transparent">pray together.</span>
+                Let&apos;s talk and <span className="bg-gradient-to-r from-[#7FB000] via-[#98CE2F] to-[#DAB24B] bg-clip-text text-transparent">pray together.</span>
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">
-                Whatever you're facing, our pastors and counsellors are ready to listen, pray with you and walk with you.
+                Whatever you&apos;re facing, our pastors and counsellors are ready to listen, pray with you and walk with you.
               </p>
             </div>
 
@@ -500,10 +500,10 @@ export default function CounselingRequestPage() {
                 <CheckCircleIcon className="h-9 w-9" strokeWidth={1.6} aria-hidden="true" />
               </span>
               <h3 className="mt-6 text-2xl font-extrabold tracking-tight text-[#061956] sm:text-3xl" role="status">
-                Thank you{firstName.current ? `, ${firstName.current}` : ""}. We've received your request.
+                Thank you{firstName.current ? `, ${firstName.current}` : ""}. We&apos;ve received your request.
               </h3>
               <p className="mx-auto mt-3 max-w-md text-slate-500">
-                A member of our pastoral team will reach out to you soon. You are loved, and we're already praying for you.
+                A member of our pastoral team will reach out to you soon. You are loved, and we&apos;re already praying for you.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link href="/" className="rounded-full bg-[#061956] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0a2472]">
@@ -623,7 +623,7 @@ export default function CounselingRequestPage() {
                     className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-[#98CE2F]"
                   />
                   <span>
-                    I'm happy for the RCCG His Dwelling Place pastoral team to contact me about this request. My details will be kept confidential.
+                    I&apos;m happy for the RCCG His Dwelling Place pastoral team to contact me about this request. My details will be kept confidential.
                   </span>
                 </label>
                 {errors.consent && <p className="mt-2 pl-7 text-xs font-medium text-red-600">{errors.consent}</p>}
