@@ -236,7 +236,7 @@ function MessageForm() {
       </div>
 
       <fieldset className="mt-5">
-        <legend className="mb-2 text-sm font-semibold text-[#061956]">What's it about?</legend>
+        <legend className="mb-2 text-sm font-semibold text-[#061956]">What&apos;s it about?</legend>
         <div className="flex flex-wrap gap-2">
           {TOPICS.map((t) => (
             <label key={t} className="cursor-pointer">
@@ -323,7 +323,7 @@ export default function ContactUs() {
               <Image src="/images/rccghdp-banner3.jpg" alt="Worship at RCCG His Dwelling Place" fill sizes="(min-width:1024px) 36vw, 90vw" className="object-cover" />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#061956]/60 to-transparent" />
               <p className="absolute bottom-5 left-5 max-w-[60%] text-lg font-extrabold leading-tight text-white">
-                Come as you are. <span className="text-[#98CE2F]">You're family.</span>
+                Come as you are. <span className="text-[#98CE2F]">You&apos;re family.</span>
               </p>
             </div>
             <div className="absolute bottom-0 right-0 h-32 w-32 overflow-hidden rounded-full border-[6px] border-[#F6F8FB] bg-[#061956] shadow-xl sm:h-40 sm:w-40">

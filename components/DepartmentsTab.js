@@ -265,7 +265,7 @@ export default function DepartmentsTabs() {
             style={{ "--d": "200ms" }}
           >
             {departments.length} departments, one family. Explore where your gifts fit and
-            join a team that's building something that lasts.
+            join a team that&apos;s building something that lasts.
           </p>
         </div>
 

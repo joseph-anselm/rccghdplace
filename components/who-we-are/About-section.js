@@ -314,7 +314,7 @@ export default function AboutUsSection() {
               href="/program-events"
               className="inline-flex items-center justify-center rounded-full border border-[#061956]/15 px-7 py-3.5 text-sm font-semibold text-[#061956] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#061956] hover:bg-[#061956] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#98CE2F]"
             >
-              See what's happening
+              See what&apos;s happening
             </Link>
           </div>
         </div>
