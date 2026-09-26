@@ -1,89 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import Link from 'next/link';
-// import Lightbox from 'yet-another-react-lightbox';
-// import 'yet-another-react-lightbox/styles.css';
-// import { client } from '@/sanityClient';
-
-// const fetchFeaturedImages = async () => {
-//   const query = `*[_type == "imageGallery" && category == "featured"][0...18]{
-//     _id,
-//     title,
-//     images[]{
-//       asset->{
-//         url
-//       },
-//       caption
-//     }
-//   }`;
-//   const galleries = await client.fetch(query);
-//   const images = galleries.flatMap(gallery => gallery.images.map(image => ({
-//     ...image,
-//     title: gallery.title,
-//     galleryId: gallery._id,
-//   })));
-//   return images;
-// };
-
-// const FeaturedGallery = () => {
-//   const [images, setImages] = useState([]);
-//   const [lightboxOpen, setLightboxOpen] = useState(false);
-//   const [lightboxIndex, setLightboxIndex] = useState(0);
-
-//   useEffect(() => {
-//     const getImages = async () => {
-//       const fetchedImages = await fetchFeaturedImages();
-//       setImages(fetchedImages);
-//     };
-//     getImages();
-//   }, []);
-
-//   const openLightbox = (index) => {
-//     setLightboxIndex(index);
-//     setLightboxOpen(true);
-//   };
-
-//   return (
-//     <section className="bg-gray-100 py-8">
-//       <div className="container mx-auto">
-//         <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold text-center mb-10">
-//           <span className="bg-gradient-to-r from-yellow-400 to-green-400 text-transparent bg-clip-text" style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }}>Featured </span>
-//           <span className="bg-gradient-to-r from-green-400 to-yellow-400 text-transparent bg-clip-text" style={{ textStroke: "1px rgba(0,0,0,0.5)", WebkitTextStroke: "1px rgba(0,0,0,0.5)" }}>Moment</span>
-//         </h2>
-
-//         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0.5">
-//           {images.slice(0, 18).map((image, index) => (
-//             <div key={index} className="relative overflow-hidden group cursor-pointer" onClick={() => openLightbox(index)}>
-//               <img
-//                 src={image.asset.url}
-//                 alt={image.caption || `Image ${index}`}
-//                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-//               />
-//             </div>
-//           ))}
-//         </div>
-//         <div className="text-right mt-8 max-w-7xl mx-auto px-4">
-//           <Link href="/gallery" legacyBehavior>
-//             <a className="text-[#9CCF30] hover:underline">View More &gt;&gt;&gt;</a>
-//           </Link>
-//         </div>
-//       </div>
-//       {lightboxOpen && (
-//         <Lightbox
-//           slides={images.map((img) => ({ src: img.asset.url, alt: img.caption }))}
-//           open={lightboxOpen}
-//           index={lightboxIndex}
-//           close={() => setLightboxOpen(false)}
-//           onIndexChange={setLightboxIndex}
-//         />
-//       )}
-//     </section>
-//   );
-// };
-
-// export default FeaturedGallery;
-
-
-
 "use client";
 
 // components/FeaturedGallery.js
@@ -106,9 +20,6 @@ import { client } from "@/sanityClient";
 const DESKTOP_TILES = 5; // 1 feature + 4 supporting
 const MOBILE_TILES = 8; // cards in the swipeable strip on phones
 
-// Desktop layout: a 4×2 grid inside a fixed-height frame. Each template fills
-// all 8 cells exactly, so the layout is always balanced whatever the photo
-// count — and whatever the original image sizes.
 const LAYOUTS = {
   1: ["col-span-4 row-span-2"],
   2: ["col-span-2 row-span-2", "col-span-2 row-span-2"],
