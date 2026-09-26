@@ -584,7 +584,7 @@ export default function TestimoniesPage() {
 
           {state === "error" && (
             <p className="mt-8 rounded-3xl border border-dashed border-slate-300 px-6 py-12 text-center text-slate-500">
-              We couldn't load testimonies right now. Please refresh to try again.
+              We couldn&apos;t load testimonies right now. Please refresh to try again.
             </p>
           )}
 
