@@ -106,12 +106,12 @@ const TestimoniesPage = () => {
 
         {/* Testimonies List */}
         {testimonies.length > 0 ? (
-          <div className="space-y-4 bg-white">
+          <div className="space-y-4">
             {testimonies.map((testimony) => (
               <Disclosure key={testimony._id}>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-sm font-medium text-left text-gold bg-gold-light rounded-lg hover:bg-gold-dark focus:outline-none focus-visible:ring focus-visible:ring-gold focus-visible:ring-opacity-75">
+                    <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-sm font-medium text-left text-gold bg-go rounded-lg hover:bg-gold-dark focus:outline-none focus-visible:ring focus-visible:ring-gold focus-visible:ring-opacity-75">
                       <span>
                         {testimony.anonymous ? 'Anonymous' : testimony.name} - {new Date(testimony._createdAt).toLocaleDateString()}
                       </span>
