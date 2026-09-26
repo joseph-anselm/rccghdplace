@@ -1,8 +1,9 @@
-// pages/api/sendCounselRequest.js
+// app/api/sendCounselRequest/route.js
 //
 // Emails counselling requests to the pastoral team — securely.
+// (App Router version — replaces the old pages/api handler.)
 //
-// Required in .env.local (and your host's environment settings):
+// Required in .env.local (and Vercel → Settings → Environment Variables):
 //   SMTP_HOST=smtp.titan.email
 //   SMTP_PORT=465
 //   SMTP_USER=counselling@rccghdplace.org
@@ -13,8 +14,12 @@
 import nodemailer from "nodemailer";
 import { guardSubmission, sameOrigin } from "@/lib/spam-guard";
 
-// Reject oversized payloads before they reach our code
-export const config = { api: { bodyParser: { sizeLimit: "20kb" } } };
+// ── Route segment config (replaces the old `export const config`) ──
+export const runtime = "nodejs"; // nodemailer needs Node, not Edge
+export const dynamic = "force-dynamic"; // never cache this route
+
+// Reject oversized payloads before they reach our code (was bodyParser.sizeLimit)
+const MAX_BODY_BYTES = 20 * 1024;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[\d\s()-]{10,18}$/;
@@ -34,6 +39,26 @@ const toIntl = (p = "") => {
   const d = p.replace(/\D/g, "");
   return d.startsWith("234") ? d : d.startsWith("0") ? `234${d.slice(1)}` : d;
 };
+
+const json = (data, status = 200, headers) => Response.json(data, { status, headers });
+
+// The spam guard was written for the Pages Router `req` object.
+// This builds a compatible object so `sameOrigin` and `guardSubmission` keep working unchanged.
+function toLegacyReq(request, body) {
+  const headers = Object.fromEntries(request.headers); // keys are already lower-case
+  const ip =
+    (headers["x-forwarded-for"] || "").split(",")[0].trim() || headers["x-real-ip"] || "";
+  const url = new URL(request.url);
+  return {
+    method: request.method,
+    url: url.pathname + url.search,
+    query: Object.fromEntries(url.searchParams),
+    headers,
+    body,
+    socket: { remoteAddress: ip },
+    connection: { remoteAddress: ip },
+  };
+}
 
 // Reuse one SMTP connection across requests
 let transporter;
@@ -120,24 +145,37 @@ function buildEmail(r) {
   return { html, text };
 }
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
+// Only POST is exported, so Next.js automatically answers other methods with 405.
+export async function POST(request) {
   const { SMTP_HOST, SMTP_USER, SMTP_PASS, FORM_SECRET } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !FORM_SECRET) {
     console.error("[counsel] Missing SMTP_* or FORM_SECRET environment variables");
-    return res.status(500).json({ error: "This form is temporarily unavailable. Please call the church office." });
+    return json({ error: "This form is temporarily unavailable. Please call the church office." }, 500);
   }
 
-  if (!sameOrigin(req)) return res.status(403).json({ error: "Forbidden." });
-  if (!String(req.headers["content-type"] || "").includes("application/json")) {
-    return res.status(415).json({ error: "Invalid request." });
+  if (!String(request.headers.get("content-type") || "").includes("application/json")) {
+    return json({ error: "Invalid request." }, 415);
   }
 
-  const body = req.body && typeof req.body === "object" ? req.body : {};
+  // Size limit — check the declared length first, then the actual body
+  if (Number(request.headers.get("content-length") || 0) > MAX_BODY_BYTES) {
+    return json({ error: "Request too large." }, 413);
+  }
+  const raw = await request.text();
+  if (Buffer.byteLength(raw, "utf8") > MAX_BODY_BYTES) {
+    return json({ error: "Request too large." }, 413);
+  }
+
+  let body = {};
+  try {
+    const parsed = JSON.parse(raw || "{}");
+    body = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+  } catch {
+    return json({ error: "Invalid request." }, 400);
+  }
+
+  const req = toLegacyReq(request, body);
+  if (!sameOrigin(req)) return json({ error: "Forbidden." }, 403);
 
   const r = {
     name: clean(body.name, 80),
@@ -151,10 +189,12 @@ export default async function handler(req, res) {
   };
 
   // Validation
-  if (!r.name) return res.status(400).json({ error: "Please tell us your name." });
-  if (!EMAIL_RE.test(r.email)) return res.status(400).json({ error: "Please enter a valid email address." });
-  if (!PHONE_RE.test(r.telephone)) return res.status(400).json({ error: "Please enter a valid phone number." });
-  if (r.whatsapp && !PHONE_RE.test(r.whatsapp)) return res.status(400).json({ error: "Please enter a valid WhatsApp number." });
+  if (!r.name) return json({ error: "Please tell us your name." }, 400);
+  if (!EMAIL_RE.test(r.email)) return json({ error: "Please enter a valid email address." }, 400);
+  if (!PHONE_RE.test(r.telephone)) return json({ error: "Please enter a valid phone number." }, 400);
+  if (r.whatsapp && !PHONE_RE.test(r.whatsapp)) {
+    return json({ error: "Please enter a valid WhatsApp number." }, 400);
+  }
 
   // Spam & abuse protection (2 requests per person every 30 minutes)
   const guard = await guardSubmission(req, body, {
@@ -166,10 +206,10 @@ export default async function handler(req, res) {
   if (!guard.ok) {
     if (guard.silent) {
       console.warn("[counsel] blocked silently:", guard.reason);
-      return res.status(200).json({ message: "Counselling request sent successfully!" });
+      return json({ message: "Counselling request sent successfully!" });
     }
     if (guard.reason) console.warn("[counsel] rejected:", guard.reason);
-    return res.status(guard.status).json({ error: guard.error });
+    return json({ error: guard.error }, guard.status || 400);
   }
 
   try {
@@ -184,11 +224,12 @@ export default async function handler(req, res) {
       priority: "high",
     });
 
-    return res.status(200).json({ message: "Counselling request sent successfully!" });
+    return json({ message: "Counselling request sent successfully!" });
   } catch (error) {
     console.error("[counsel] Error sending email:", error?.message || error);
-    return res.status(500).json({
-      error: "We couldn't send your request just now. Please try again, or call the church office.",
-    });
+    return json(
+      { error: "We couldn't send your request just now. Please try again, or call the church office." },
+      500
+    );
   }
 }
